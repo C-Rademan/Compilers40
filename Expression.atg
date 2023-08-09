@@ -1,0 +1,13 @@
+COMPILER Expression $CN
+/* Attempt to write expression grammar with exponentiation
+   P.D. Terry, Rhodes University */
+
+IGNORE CHR(0) .. CHR(31)
+
+PRODUCTIONS
+  Expression = Ex {"^" Ex } EOF.
+  Ex 		 = Term { ( "+" | "-" ) Term} .
+  Term       = Factor  { ( "*" | "/" ) Factor } .
+  Factor     = "a" | "b" | "c" .
+END Expression.
+  
